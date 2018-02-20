@@ -1,0 +1,51 @@
+server.js - 
+    imports routes from ./routes
+    creates const app from express()
+    calls app.use(routes);
+    connects to mongo via mongoose
+
+routes/index.js -
+    imports 
+        const path = require("path");
+        const router = require("express").Router();
+        const apiRoutes = require("./api");
+    sets router.use('/api', apiRoutes)
+    exports router
+
+routes/api/index.js -
+    imports
+        const router = require("express").Router();
+        const bookRoutes = require("./books");
+    router.use("/books", bookRoutes);
+    exports router
+
+routes/api/books.js -
+    imports (gets from controllers)
+        const router = require("express").Router();
+        const booksController = require("../../controllers/booksController");
+    sets routes for '/' and '/:id' in booksController.
+    exports router
+
+controllers/booksController.js -
+    imports 
+        const db = require("../models");
+    module.exports = {
+        all the CRUD functions for the DB.
+        db.Book.something (find, create, etc.)
+    }
+
+models/index.js -
+    only does
+        module.exports = {Book: require("./book")};
+
+models/book.js -
+    imports
+        const mongoose = require("mongoose");
+        const Schema = mongoose.Schema;
+    sets mongoose Schema: const bookSchema = new Schema({key: data})
+    const Book = mongoose.model("Book", bookSchema);
+    exports Book
+
+express-mongoose-generatorconst Book = mongoose.model("Book", bookSchema);
+
+

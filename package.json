@@ -1,0 +1,26 @@
+{
+  "name": "nytimes-react-app",
+  "version": "1.0.0",
+  "description": "react app searching the ny times site",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byork2005/nytimes-react-app.git"
+  },
+  "author": "Brandon York",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/byork2005/nytimes-react-app/issues"
+  },
+  "homepage": "https://github.com/byork2005/nytimes-react-app#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.0.6"
+  }
+}
